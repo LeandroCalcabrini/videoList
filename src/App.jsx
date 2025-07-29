@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import User from "./pages/User";
 import { contextApp } from "./context/contextApp";
 import { useState, useEffect } from "react";
+import Header from "./components/header/Header";
 
 function App() {
   const [videoGames, setVideoGames] = useState([]);
@@ -30,6 +31,7 @@ function App() {
     <>
       <contextApp.Provider value={{ error, setError }}>
         <BrowserRouter>
+          <Header />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/user" element={<User />} />
